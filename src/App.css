@@ -1,0 +1,110 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.game-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.board-container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+}
+
+.board-container h3 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.square {
+  border: 2px solid #ddd;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+  margin: 2px;
+}
+
+.square:hover {
+  background: #e9ecef;
+  transform: scale(1.05);
+}
+
+.square:active {
+  transform: scale(0.95);
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .game-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .square {
+    height: 60px;
+    width: 60px;
+    font-size: 30px;
+  }
+  
+  .board-container {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .board-container h3 {
+    font-size: 1.2em;
+  }
+}
