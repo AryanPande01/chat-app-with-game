@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Play Again Button</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .info { background-color: #d1ecf1; border-color: #bee5eb; }
+        .warning { background-color: #fff3cd; border-color: #ffeaa7; }
+    </style>
+</head>
+<body>
+    <h1>🎮 Tic-Tac-Toe Play Again Button Test</h1>
+    
+    <div class="test-section info">
+        <h2>📋 Test Instructions</h2>
+        <ol>
+            <li><strong>Open two browser windows/tabs</strong> to <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></li>
+            <li><strong>Wait for both players to connect</strong> (you should see "Game starting..." or player roles)</li>
+            <li><strong>Play a game</strong> until someone wins or it's a draw</li>
+            <li><strong>Click the green "Play Again" button</strong></li>
+            <li><strong>Verify the following:</strong>
+                <ul>
+                    <li>✅ Board resets to empty</li>
+                    <li>✅ Chat messages are cleared</li>
+                    <li>✅ Both players can make moves again</li>
+                    <li>✅ Turn indicator works correctly</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="test-section warning">
+        <h2>🔍 Debug Information</h2>
+        <p><strong>To see debug info:</strong></p>
+        <ul>
+            <li>Open browser console (F12 → Console)</li>
+            <li>Look for messages like "Reset button clicked", "Game start event received", etc.</li>
+            <li>The debug info will also be displayed on the game screen</li>
+        </ul>
+    </div>
+
+    <div class="test-section success">
+        <h2>✅ Expected Behavior</h2>
+        <ul>
+            <li><strong>When game ends:</strong> Green "Play Again" button appears</li>
+            <li><strong>When clicked:</strong> Board immediately clears and game restarts</li>
+            <li><strong>Chat:</strong> Messages are cleared on reset</li>
+            <li><strong>Players:</strong> Both can make moves in new game</li>
+            <li><strong>Turn indicator:</strong> Shows correct current player</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>🚀 Quick Access</h2>
+        <p><a href="http://localhost:3000" target="_blank" style="background: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Open Game</a></p>
+        <p><strong>Server Status:</strong> <span id="server-status">Checking...</span></p>
+        <p><strong>App Status:</strong> <span id="app-status">Checking...</span></p>
+    </div>
+
+    <script>
+        // Check if services are running
+        fetch('http://localhost:3000')
+            .then(() => document.getElementById('app-status').textContent = '✅ Running')
+            .catch(() => document.getElementById('app-status').textContent = '❌ Not running');
+            
+        fetch('http://localhost:3001')
+            .then(() => document.getElementById('server-status').textContent = '✅ Running')
+            .catch(() => document.getElementById('server-status').textContent = '❌ Not running');
+    </script>
+</body>
+</html> 
